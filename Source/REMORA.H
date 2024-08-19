@@ -43,6 +43,10 @@
 #include "REMORA_NCInterface.H"
 #endif
 
+#ifdef REMORA_HAVE_MOAB
+#include "moab/Core.hpp"
+#endif
+
 #include <iostream>
 
 #ifdef AMREX_LAZY

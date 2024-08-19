@@ -252,6 +252,10 @@ REMORA::InitData ()
     //     those types into what they mean for each variable
     init_bcs();
 
+#ifdef REMORA_HAVE_MOAB
+    moab::Core mbCore;
+
+#endif
     last_plot_file_step = -1;
     last_check_file_step = -1;
 
