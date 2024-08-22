@@ -252,9 +252,9 @@ REMORA::InitData ()
     //     those types into what they mean for each variable
     init_bcs();
 
-#ifdef REMORA_HAVE_MOAB
+#ifdef REMORA_USE_MOAB
     moab::Core mbCore;
-
+    moab::Tag gid_tag = mbCore.globalId_tag();
 #endif
     last_plot_file_step = -1;
     last_check_file_step = -1;

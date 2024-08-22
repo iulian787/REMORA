@@ -43,7 +43,7 @@
 #include "REMORA_NCInterface.H"
 #endif
 
-#ifdef REMORA_HAVE_MOAB
+#ifdef REMORA_USE_MOAB
 #include "moab/Core.hpp"
 #endif
 
