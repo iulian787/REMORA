@@ -45,7 +45,7 @@ function(build_remora_lib remora_lib_name)
   endif()
 
   if(REMORA_ENABLE_MOAB)
-    target_compile_definitions(${remora_lib_name} PUBLIC REMORA_HAVE_MOAB)
+    target_compile_definitions(${remora_lib_name} PUBLIC REMORA_USE_MOAB)
   endif()
   
   target_sources(${remora_lib_name}
