@@ -44,7 +44,7 @@
 #endif
 
 #ifdef REMORA_USE_MOAB
-#include "moab/Core.hpp"
+#include "REMORA_MOAB.H"
 #endif
 
 #include <iostream>
@@ -863,6 +863,9 @@ private:
 
 #endif // REMORA_USE_NETCDF
 
+#ifdef REMORA_USE_MOAB
+    void InitMOABMesh();
+#endif
     // Fillpatcher classes for coarse-fine boundaries
     int cf_width{0};
     int cf_set_width{0};
