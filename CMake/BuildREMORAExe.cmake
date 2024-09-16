@@ -45,6 +45,9 @@ function(build_remora_lib remora_lib_name)
   endif()
 
   if(REMORA_ENABLE_MOAB)
+    target_sources(${remora_lib_name} PRIVATE
+                   ${SRC_DIR}/REMORA_MOAB.cpp
+                   ${SRC_DIR}/REMORA_MOAB.H)
     target_compile_definitions(${remora_lib_name} PUBLIC REMORA_USE_MOAB)
   endif()
   
