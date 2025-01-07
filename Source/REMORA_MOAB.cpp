@@ -59,8 +59,10 @@ REMORA::InitMOABMesh()
     }
     moab::Range cell_centers;
     moab::ErrorCode rval = mbi->create_vertices( &coords[0], num_cells, cell_centers );
-
-    rval = mbi->write_file("cell_centers.h5m");
+    moab::EntityHandle file_set;
+    rval = mbi->create_meshset( moab::MESHSET_SET, file_set );
+    rval = mbi->add_entities(file_set, cell_centers);
+    rval = mbi->write_file("cell_centers.h5m",0,"PARALLEL=WRITE_PART", &file_set, 1);
 
 
     return;
